@@ -55,3 +55,14 @@ nav {
     display: flex;
     flex-direction: column;
 }
+footer {
+    background-color: #1F2A28;
+    height: 65px;
+    padding: 24px 40px;
+}
+
+footer p {
+    margin: 0;
+    font-size: 14px;
+    color: white;
+}
