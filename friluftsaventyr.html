@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Friluftsäventyr – WorkHub</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- HEADER (same as index.html) -->
+  <header class="header">
+    <nav>
+      <a href="index.html" class="logo">WorkHub</a>
+      <div class="nav-links">
+        <a href="index.html">Start</a>
+        <a href="spel.html">Spel och mysterier</a>
+        <a href="friluftsaventyr.html" class="active" aria-current="page">Friluftsäventyr</a>
+        <a href="kreativa.html">Kreativa workshops</a>
+        <a href="mat.html">Mat och smak</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Friluftsäventyr</h1>
+    <p>Välj ett äventyr, ange antal personer och skicka din bokningsförfrågan.</p>
+
+    <!-- 1. OFFERS: JavaScript fills this box -->
+    <section>
+      <h2>1. Välj ett äventyr</h2>
+      <div id="offers"></div>
+    </section>
+
+    <!-- 2. FORM -->
+    <section>
+      <h2>2. Din bokningsförfrågan</h2>
+
+      <form id="booking-form" novalidate>
+
+        <label for="name">Namn</label>
+        <input type="text" id="name">
+        <p class="error" id="name-error"></p>
+
+        <label for="email">E-postadress</label>
+        <input type="text" id="email">
+        <p class="error" id="email-error"></p>
+
+        <label for="offer">Erbjudande</label>
+        <select id="offer">
+          <option value="">Välj ett äventyr</option>
+        </select>
+        <p class="error" id="offer-error"></p>
+
+        <label for="quantity">Antal personer (1–5)</label>
+        <input type="number" id="quantity" value="1" min="1" max="5">
+        <p class="error" id="quantity-error"></p>
+
+        <button type="submit" class="button">Bekräfta</button>
+        <button type="button" id="reset-button" class="button button-secondary">Börja om</button>
+
+      </form>
+    </section>
+
+    <!-- 3. PRICE -->
+    <section>
+      <h2>Totalpris</h2>
+      <p id="price">Välj ett erbjudande för att se priset.</p>
+    </section>
+
+    <!-- 4. CONFIRMATION: JavaScript fills this box -->
+    <section id="confirmation"></section>
+  </main>
+
+  <!-- FOOTER (same as index.html) -->
+  <footer>
+  </footer>
+
+</body>
+</html>
