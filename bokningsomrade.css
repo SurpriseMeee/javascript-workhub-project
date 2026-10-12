@@ -1,0 +1,125 @@
+
+/* =========================
+   GRUNDSTIL
+   ========================= */
+
+body {
+    margin: 0;
+    background-color: #F7F5F0;
+    color: #1F2A28;
+    font-family: "Inter", sans-serif;
+}
+
+
+/* =========================
+   BOKNINGSOMRÅDE
+   ========================= */
+
+.booking-areas {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 25px;
+}
+
+.booking-areas h2 {
+    margin-bottom: 28px;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 1;
+    color: #1F2A28;
+}
+
+/* =========================
+   BOKNINGSKORT
+   ========================= */
+
+.booking-cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    justify-content: center;
+}
+
+.booking-card {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 270px;
+    height: 291px;
+    background-color: #FFFFFF;
+    border: 1px solid #D9D4CB;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+/* =========================
+   BILDYTA
+   ========================= */
+
+.card-image {
+    height: 150px;
+    background-color:#C9DAD3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* =========================
+   KORTENS INNEHÅLL
+   ========================= */
+
+.card-content {
+    padding: 16px;
+}
+
+.card-content h3 {
+    margin-top: 0;
+    margin-bottom: 8px;
+    font-size: 20px;
+    font-weight: 600;
+    color: #1F2A28;
+    line-height: 1;
+}
+
+.card-content p {
+    margin-top: 0;
+    margin-bottom: 12px;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1;
+    color: #6B7470;
+}
+
+/* =========================
+   LÄNKAR
+   ========================= */
+
+.card-content a {
+    color: #2F5D50;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1;
+    text-decoration: none;
+}
+
+.card-content a:hover {
+    text-decoration: underline;
+}
+
+
+/* =========================
+   RESPONSIV DESIGN
+   ========================= */
+
+@media (max-width: 900px) {
+    .booking-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .booking-cards {
+        grid-template-columns: 1fr;
+    }
+}
