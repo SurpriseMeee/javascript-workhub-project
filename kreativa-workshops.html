@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kreativa workshops</title>
+</head>
+<body>
+    
+    <header>
+        <h1>Kreativa workshops</h1>
+    </header>
+
+    <main>
+        <section id="workshops">
+            <h2>Välj workshop</h2>
+            <p>Välj den kreativa workshop du vill boka.</p>
+            <div id="workshopList"></div>
+        </section>
+
+        <p id="selectedWorkshop">Ingen workshop vald</p>
+        <p id="workshopError"></p>
+        <label for="quantity">Antal personer</label>
+        <input type="number" id="quantity" value="1" min="1" max="5" onchange="calculatePrice()">
+
+        <p id="priceMessage">Välj en workshop för att se priset.</p>
+        
+        
+        <h2>Bokningsförfrågan</h2>
+            <form id="bookingForm" novalidate>
+
+                <label for="name">Namn</label>
+                <input type="text" id="name">
+                <p id="nameError"></p>
+
+                <label for="email">E-postadress</label>
+                <input type="text" id="email">
+                <p id="emailError"></p>
+
+                <button type="submit">Skicka bokningsförfrågan</button>
+                <button type="button" id="resetButton">Börja om</button>
+
+            </form>
+    </main>
+
+    <script src="kreativa-workshops.js"></script>
+
+</body>
+</html>
