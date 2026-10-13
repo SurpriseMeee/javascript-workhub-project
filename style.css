@@ -45,32 +45,45 @@ nav {
     color: #E07A3F;
 }
 
-.hero{
+/* ===================================
+   VÄLKOMSTSEKTION
+=================================== */
+
+.hero {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    max-width: 1200px;
-    margin-left: auto;
-    margin-right: auto;
+    justify-content: center;
+    text-align: center;
 
+    background-color: #E4EDE9;
+    padding: 88px 20px;
     font-family: "Inter", sans-serif;
-    font-weight: 600;
     color: #1F2A28;
-    width: auto;
-    height: 73px;
-    box-sizing: border-box;
-    display: flex;
+}
 
-    /* max-width: 1200px;
+.hero h1 {
+    font-size: 3rem;
+    margin: 0 0 16px;
+}
 
-    font-family: "Inter", sans-serif;
-    font-weight: 600;
+.hero p {
+    font-size: 1.25rem;
     color: #6B7470;
-    margin-top: 121px;
-    justify-content: space-between;
-    width: 100%;
-    height: auto;
-    display: flex;
-    flex-direction: column; */
+    margin: 0 0 28px;
+}
+
+/* Knappen i välkomstsektionen */
+.hero .button {
+    display: inline-block;
+    background-color: #2F5D50;
+    color: #FFFFFF;
+    padding: 12px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.hero .button:hover {
+    background-color: #24483E;
 }
