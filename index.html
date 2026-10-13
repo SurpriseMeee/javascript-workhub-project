@@ -5,22 +5,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>WorkHub – Upplevelser</title>
   <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="bokningsomrade.css">
 </head>
 <body>
 
   <!-- HEADER (Person 1 – Mike) -->
-  <header class="header">
+<header class="header">
     <nav>
-      <a href="index.html" class="logo">WorkHub</a>
-      <div class="nav-links">
-        <a href="index.html">Start</a>
-        <a href="spel.html">Spel och mysterier</a>
-        <a href="friluftsaventyr.html">Friluftsäventyr</a>
-        <a href="kreativa.html">Kreativa workshops</a>
-        <a href="mat.html">Mat och smak</a>
-      </div>
+        <h1>WorkHub</h1>
+        <div
+            class="nav-links">
+            <a href="index.html"><button style="color: #E07A3F;"><u>Start</u></button></a>
+            <a href="spel-sida.html"><button>Spel och mysterier</button></a>
+            <a href=""><button>Friluftsäventyr</button></a>
+            <a href=""><button>Kreativa workshops</button></a>
+            <a href=""><button>Mat och smak</button></a>
+        </div>
     </nav>
-  </header>
+</header>
 
   <main>
     
@@ -31,12 +33,66 @@
     <a href="#omraden" class="button">Se våra upplevelser</a>
     </section>
 
-    <!-- OMRÅDESKORT (Person 3 – Natali) -->
-    <section class="booking">
-    </section>
-  </main>
+   
+<!-- ===================================
+     BOKNINGSOMRÅDE – Person 3 (Natali)
+=================================== -->
 
-   <!-- FOOTER (Person 4 – Qustan) -->
+<section class="booking-areas" id="omraden">
+
+    <h2>Våra bokningsområden</h2>
+
+    <div class="booking-cards">
+
+        <!-- Spel och mysterier -->
+        <article class="booking-card">
+            <div class="card-image">Bild</div>
+
+            <div class="card-content">
+                <h3>Spel och mysterier</h3>
+                <p>Escape room, VR-upplevelse och mordgåta.</p>
+                <a href="#">Boka →</a>
+            </div>
+        </article>
+
+        <!-- Friluftsäventyr -->
+        <article class="booking-card">
+            <div class="card-image">Bild</div>
+
+            <div class="card-content">
+                <h3>Friluftsäventyr</h3>
+                <p>Kanottur, klättring och mountainbike i naturen.</p>
+                <a href="#">Boka →</a>
+            </div>
+        </article>
+
+        <!-- Kreativa workshops -->
+        <article class="booking-card">
+            <div class="card-image">Bild</div>
+
+            <div class="card-content">
+                <h3>Kreativa workshops</h3>
+                <p>Keramik, måleri och silversmide.</p>
+                <a href="kreativa-workshops.html">Boka →</a>
+            </div>
+        </article>
+
+        <!-- Mat och smak -->
+        <article class="booking-card">
+            <div class="card-image">Bild</div>
+
+            <div class="card-content">
+                <h3>Mat och smak</h3>
+                <p>Chokladprovning, pizzabakning och matlagningskurs.</p>
+                <a href="#">Boka →</a>
+            </div>
+        </article>
+
+    </div>
+
+</section>
+
+  <!-- FOOTER (Person 4 – Qustan) -->
   <footer>
     <p>© 2026 WorkHub – ett fiktivt företag (skolprojekt)</p>
   </footer>

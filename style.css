@@ -87,3 +87,20 @@ nav {
 .hero .button:hover {
     background-color: #24483E;
 }
+
+/* ===================================
+   FOOTER – Person 4 (Qustan)
+=================================== */
+
+footer {
+    background-color: #1F2A28;
+    padding: 24px 40px;
+    text-align: center;
+}
+
+footer p {
+    margin: 0;
+    font-family: "Inter", sans-serif;
+    font-size: 14px;
+    color: #FFFFFF;
+}
