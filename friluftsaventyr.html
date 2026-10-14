@@ -23,7 +23,7 @@
     </nav>
   </header>
 
-  <main>
+  <main class="booking-page">
     <h1>Friluftsäventyr</h1>
     <p>Välj ett äventyr, ange antal personer och skicka din bokningsförfrågan.</p>
 
@@ -40,25 +40,27 @@
       <form id="booking-form" novalidate>
 
         <label for="name">Namn</label>
-        <input type="text" id="name">
+        <input type="text" id="name" aria-describedby="name-error">
         <p class="error" id="name-error"></p>
 
         <label for="email">E-postadress</label>
-        <input type="text" id="email">
+        <input type="text" id="email" aria-describedby="email-error">
         <p class="error" id="email-error"></p>
 
         <label for="offer">Erbjudande</label>
-        <select id="offer">
+        <select id="offer" aria-describedby="offer-error">
           <option value="">Välj ett äventyr</option>
         </select>
         <p class="error" id="offer-error"></p>
 
         <label for="quantity">Antal personer (1–5)</label>
-        <input type="number" id="quantity" value="1" min="1" max="5">
+        <input type="number" id="quantity" value="1" min="1" max="5" aria-describedby="quantity-error">
         <p class="error" id="quantity-error"></p>
 
-        <button type="submit" class="button">Bekräfta</button>
-        <button type="button" id="reset-button" class="button button-secondary">Börja om</button>
+        <div class="form-buttons">
+          <button type="submit" class="button">Bekräfta</button>
+          <button type="button" id="reset-button" class="button button-secondary">Börja om</button>
+        </div>
 
       </form>
     </section>
@@ -66,7 +68,7 @@
     <!-- 3. PRICE -->
     <section>
       <h2>Totalpris</h2>
-      <p id="price">Välj ett erbjudande för att se priset.</p>
+      <p id="price" aria-live="polite">Välj ett erbjudande för att se priset.</p>
     </section>
 
     <!-- 4. CONFIRMATION: JavaScript fills this box -->
@@ -75,11 +77,11 @@
 
   <!-- FOOTER (same as index.html) -->
   <footer>
+    <p>© 2026 WorkHub – ett fiktivt företag (skolprojekt)</p>
   </footer>
 
   
-
-    <script src="js/friluftsaventyr.js"></script>
+<script src="js/friluftsaventyr.js"></script>
 
 </body>
 </html>
