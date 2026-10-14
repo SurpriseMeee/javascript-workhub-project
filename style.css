@@ -311,3 +311,35 @@ footer p {
     width: 100%;
   }
 }
+
+/* Buttons on the booking page (Bekräfta + Börja om) */
+.booking-page .button {
+  display: inline-block;
+  padding: 12px 24px;
+  font: inherit;
+  font-weight: 600;
+  color: #FFFFFF;
+  background-color: #2F5D50;
+  border: 2px solid #2F5D50;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.booking-page .button:hover {
+  opacity: 0.85;
+}
+
+.booking-page .button:focus-visible {
+  outline: 3px solid #E07A3F;
+  outline-offset: 2px;
+}
+
+.booking-page .button-secondary {
+  color: #2F5D50;
+  background-color: #FFFFFF;
+}
+
+.booking-page .button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
