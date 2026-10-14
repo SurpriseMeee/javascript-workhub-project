@@ -104,3 +104,210 @@ footer p {
     font-size: 14px;
     color: #FFFFFF;
 }
+/* ===== Bokningssida Friluftsäventyr (Rashmoni) ===== */
+
+/* Page area – everything is inside .booking-page, so other pages are not affected */
+.booking-page {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 40px 20px 64px;
+  font-family: "Inter", Arial, sans-serif;
+  color: #1F2A28;
+}
+
+.booking-page h1 {
+  font-size: 2.5rem;
+  margin: 0 0 8px;
+}
+
+.booking-page h2 {
+  font-size: 1.5rem;
+  margin: 0 0 16px;
+}
+
+.booking-page > p {
+  color: #6B7470;
+  margin: 0 0 32px;
+}
+
+.booking-page section {
+  margin-bottom: 32px;
+}
+
+/* Offer cards */
+#offers {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.offer-card {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 300px;
+  padding: 20px;
+  text-align: left;
+  font: inherit;
+  color: inherit;
+  background-color: #FFFFFF;
+  border: 1px solid #D9D4CB;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.offer-card:hover {
+  border-color: #2F5D50;
+}
+
+.offer-card:focus-visible {
+  outline: 3px solid #E07A3F;
+  outline-offset: 2px;
+}
+
+/* The chosen card: thicker orange border + "✓ Vald" label (not only colour) */
+.offer-card.selected {
+  border: 3px solid #E07A3F;
+  padding: 18px; /* 2px less, so the card does not grow */
+}
+
+.offer-badge:empty {
+  display: none;
+}
+
+.offer-badge {
+  align-self: flex-start;
+  padding: 2px 10px;
+  border-radius: 999px;
+  background-color: #E07A3F;
+  color: #FFFFFF;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.offer-name {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.offer-description {
+  color: #6B7470;
+  font-size: 0.95rem;
+}
+
+.offer-price {
+  font-weight: 700;
+  color: #2F5D50;
+}
+
+/* Locked cards after confirmation */
+.offer-card:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+/* Form */
+#booking-form {
+  display: flex;
+  flex-direction: column;
+  max-width: 480px;
+  padding: 28px;
+  background-color: #FFFFFF;
+  border: 1px solid #D9D4CB;
+  border-radius: 12px;
+}
+
+#booking-form label {
+  font-weight: 500;
+  margin-bottom: 6px;
+}
+
+#booking-form input,
+#booking-form select {
+  font: inherit;
+  padding: 10px 14px;
+  border: 1px solid #D9D4CB;
+  border-radius: 8px;
+  background-color: #FFFFFF;
+}
+
+#booking-form input:focus-visible,
+#booking-form select:focus-visible {
+  outline: 3px solid #E07A3F;
+  outline-offset: 1px;
+}
+
+/* A field with an error gets a red, thicker border */
+#booking-form [aria-invalid="true"] {
+  border: 2px solid #C0392B;
+}
+
+#booking-form input:disabled,
+#booking-form select:disabled {
+  background-color: #F1EFE8;
+  cursor: not-allowed;
+}
+
+/* Error messages: red text directly under the field */
+.error {
+  min-height: 1.2em;
+  margin: 6px 0 14px;
+  color: #C0392B;
+  font-size: 0.9rem;
+}
+
+.form-buttons {
+  display: flex;
+  gap: 12px;
+  margin-top: 4px;
+}
+
+.button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+/* Price */
+#price {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #2F5D50;
+  margin: 0;
+}
+
+/* Confirmation – only visible when JavaScript has put something in it */
+#confirmation:empty {
+  display: none;
+}
+
+#confirmation {
+  max-width: 480px;
+  padding: 24px 28px;
+  background-color: #E4EDE9;
+  border: 2px solid #2F5D50;
+  border-radius: 12px;
+}
+
+#confirmation h2 {
+  color: #2F5D50;
+  font-size: 1.25rem;
+}
+
+#confirmation ul {
+  margin: 0 0 12px;
+  padding-left: 20px;
+  line-height: 1.8;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .booking-page h1 {
+    font-size: 2rem;
+  }
+
+  .offer-card,
+  #booking-form,
+  #confirmation {
+    width: 100%;
+  }
+}
