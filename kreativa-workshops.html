@@ -1,47 +1,137 @@
+
 <!DOCTYPE html>
 <html lang="sv">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kreativa workshops</title>
+    <title>Kreativa workshops – WorkHub</title>
+    <link rel="stylesheet" href="kreativa-workshops.css">
 </head>
+
 <body>
-    
-    <header>
-        <h1>Kreativa workshops</h1>
+
+    <!-- ===================================
+         1. HEADER OCH NAVIGERING
+    =================================== -->
+
+    <header class="header">
+        <nav class="navbar">
+            <a href="index.html" class="logo">WorkHub</a>
+
+            <div class="nav-links">
+                <a href="index.html">Start</a>
+                <a href="spel-sida.html">Spel och mysterier</a>
+                <a href="#">Friluftsäventyr</a>
+                <a href="kreativa-workshops.html" class="active">Kreativa workshops</a>
+                <a href="#">Mat och smak</a>
+            </div>
+        </nav>
     </header>
 
-    <main>
-        <section id="workshops">
-            <h2>Välj workshop</h2>
-            <p>Välj den kreativa workshop du vill boka.</p>
-            <div id="workshopList"></div>
+    <!-- ===================================
+         2. SIDANS HUVUDINNEHÅLL
+    =================================== -->
+
+    <main class="container">
+
+        <section class="page-intro">
+            <h1>Kreativa workshops</h1>
+            <p>Välj en upplevelse, ange antal personer och skicka din bokningsförfrågan.</p>
         </section>
 
-        <p id="selectedWorkshop">Ingen workshop vald</p>
-        <p id="workshopError"></p>
-        <label for="quantity">Antal personer</label>
-        <input type="number" id="quantity" value="1" min="1" max="5" onchange="calculatePrice()">
+        <!-- ===================================
+             3. VÄLJ WORKSHOP
+        =================================== -->
 
-        <p id="priceMessage">Välj en workshop för att se priset.</p>
-        
-        
-        <h2>Bokningsförfrågan</h2>
-            <form id="bookingForm" novalidate>
+        <section id="workshops">
+            <h2>1. Välj en upplevelse</h2>
 
-                <label for="name">Namn</label>
-                <input type="text" id="name">
-                <p id="nameError"></p>
+            <div id="workshopList"></div>
+            <p id="selectedWorkshop">Ingen workshop vald</p>
+            <p id="workshopError"></p>
+        </section>
 
-                <label for="email">E-postadress</label>
-                <input type="text" id="email">
-                <p id="emailError"></p>
+        <!-- ===================================
+             4. BOKNING OCH TOTALPRIS
+        =================================== -->
 
-                <button type="submit">Skicka bokningsförfrågan</button>
-                <button type="button" id="resetButton">Börja om</button>
+        <section class="booking-layout">
 
-            </form>
+            <!-- VÄNSTER: BOKNINGSFORMULÄR -->
+
+            <div class="booking-box">
+                <h2>2. Din bokningsförfrågan</h2>
+
+                <form id="bookingForm" novalidate>
+
+                    <label for="name">Namn</label>
+                    <input type="text" id="name" placeholder="För- och efternamn">
+                    <p id="nameError" class="error-message"></p>
+
+                    <label for="email">E-postadress</label>
+                    <input type="email" id="email" placeholder="namn@exempel.se">
+                    <p id="emailError" class="error-message"></p>
+
+
+<!-- Välj erbjudande -->
+<label for="workshopSelect">Erbjudande</label>
+
+<select id="workshopSelect">
+    <option value="">Välj ett erbjudande</option>
+    <option value="1">Keramik</option>
+    <option value="2">Måleri</option>
+    <option value="3">Silversmide</option>
+</select>
+
+
+                    <label for="quantity">Antal personer (1–5)</label>
+                    <input
+                        type="number"
+                        id="quantity"
+                        value="1"
+                        min="1"
+                        max="5"
+                        onchange="calculatePrice()"
+                    >
+
+                    <div class="form-buttons">
+                        <button type="submit">Bekräfta</button>
+                        <button type="button" id="resetButton">Börja om</button>
+                    </div>
+
+                </form>
+            </div>
+
+            <!-- HÖGER: TOTALPRIS OCH BEKRÄFTELSE -->
+
+            <div class="booking-summary">
+
+                <div class="price-box">
+                    <h3>Totalpris</h3>
+                    <p id="priceMessage">Välj ett erbjudande för att se priset.</p>
+                    <p class="price-info">Startmeddelande innan val: "Välj ett erbjudande för att se priset."</p>
+
+                </div>
+
+                <p id="bookingConfirmation"></p>
+
+            </div>
+
+        </section>
+
     </main>
+
+    <!-- ===================================
+         5. FOOTER
+    =================================== -->
+
+    <footer>
+        <p>© 2026 WorkHub – ett fiktivt företag (skolprojekt)</p>
+    </footer>
+
+    <!-- ===================================
+         6. JAVASCRIPT
+    =================================== -->
 
     <script src="kreativa-workshops.js"></script>
 

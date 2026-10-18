@@ -1,0 +1,411 @@
+
+/* ===================================
+   1. GRUNDSTIL
+=================================== */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: #F7F5F0;
+    color: #1F2A28;
+    font-family: "Inter", Arial, sans-serif;
+}
+
+/* ===================================
+   2. HEADER OCH NAVIGERING
+=================================== */
+
+.header {
+    background-color: #2F5D50;
+    padding: 22px 40px;
+}
+
+.navbar {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+}
+
+.logo {
+    color: white;
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.nav-links {
+    display: flex;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: #E07A3F;
+}
+
+/* ===================================
+   3. SIDANS HUVUDINNEHÅLL
+=================================== */
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 50px 40px 70px;
+}
+
+.page-intro h1 {
+    font-size: 32px;
+    margin: 0 0 10px;
+}
+
+.page-intro p {
+    color: #6B7470;
+    margin: 0 0 35px;
+}
+
+/* ===================================
+   4. WORKSHOPKORT
+=================================== */
+
+#workshops h2 {
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+
+#workshopList {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.workshop-card {
+    background-color: white;
+    border: 1px solid #D9D4CB;
+    border-radius: 12px;
+    padding: 24px;
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.workshop-card h3 {
+    margin: 0;
+    font-size: 20px;
+}
+
+.workshop-card p {
+    margin: 0;
+    line-height: 1.5;
+}
+
+.workshop-card p:nth-of-type(2) {
+    color: #2F5D50;
+    font-weight: 700;
+}
+
+.workshop-card button {
+    margin-top: auto;
+}
+
+
+/* ===================================
+   MARKERING AV VALD WORKSHOP
+=================================== */
+
+.workshop-card.selected {
+    border: 2px solid #E07A3F;
+    background-color: #FFFFFF;
+}
+
+.workshop-card.selected::before {
+    content: "✓ Vald";
+    display: inline-block;
+    align-self: flex-start;
+    background-color: #E07A3F;
+    color: white;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+
+/* ===================================
+   5. KNAPPAR
+=================================== */
+
+button {
+    background-color: #2F5D50;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 20px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #24483E;
+}
+
+#resetButton {
+    background-color: white;
+    color: #2F5D50;
+    border: 1px solid #2F5D50;
+}
+
+#resetButton:hover {
+    background-color: #E4EDE9;
+}
+
+/* ===================================
+   6. VALD WORKSHOP
+=================================== */
+
+#selectedWorkshop {
+    font-weight: 600;
+    color: #2F5D50;
+    margin-top: 20px;
+}
+
+#workshopError {
+    color: #C0392B;
+}
+
+/* ===================================
+   7. BOKNINGSLAYOUT
+=================================== */
+
+.booking-layout {
+    display: grid;
+    grid-template-columns: 1.6fr 1fr;
+    gap: 32px;
+    margin-top: 30px;
+    align-items: start;
+}
+
+.booking-box,
+.price-box {
+    background-color: white;
+    border: 1px solid #D9D4CB;
+    border-radius: 12px;
+    padding: 28px;
+}
+
+.booking-box h2 {
+    font-size: 22px;
+    margin: 0 0 24px;
+}
+
+#bookingForm label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+#bookingForm input {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #D9D4CB;
+    border-radius: 6px;
+    font-size: 16px;
+}
+
+.form-buttons {
+    display: flex;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+/* ===================================
+   8. TOTALPRIS
+=================================== */
+
+.price-box h3 {
+    font-size: 16px;
+    color: #6B7470;
+    font-weight: 400;
+    margin: 0 0 12px;
+}
+
+#priceMessage {
+    color: #2F5D50;
+    font-size: 24px;
+    font-weight: 700;
+    margin: 0;
+}
+
+
+/* Prisets storlek och uppdelning */
+
+#priceMessage {
+    font-size: 36px;
+    font-weight: 700;
+    color: #2F5D50;
+}
+
+.price-details {
+    display: block;
+    font-size: 14px;
+    font-weight: 400;
+    color: #6B7470;
+    margin-top: 8px;
+}
+
+
+/* ===================================
+   9. FELMEDDELANDEN
+=================================== */
+
+.error-message {
+    color: #C0392B;
+    font-size: 13px;
+    margin: 6px 0 14px;
+}
+
+/* ===================================
+   10. BOKNINGSBEKRÄFTELSE
+=================================== */
+
+#bookingConfirmation:not(:empty) {
+    display: block;
+    background-color: #E4EDE9;
+    border: 1px solid #2F5D50;
+    border-radius: 12px;
+    padding: 24px;
+    color: #2F5D50;
+    font-weight: 600;
+    line-height: 1.6;
+    margin-top: 20px;
+}
+
+
+#bookingConfirmation strong {
+    display: block;
+    margin-bottom: 12px;
+}
+
+#bookingConfirmation p {
+    margin: 6px 0;
+    font-weight: 400;
+    font-size: 14px;
+}
+
+
+/* ===================================
+   11. FOOTER
+=================================== */
+
+footer {
+    background-color: #1F2A28;
+    color: white;
+    padding: 24px 40px;
+}
+
+footer p {
+    max-width: 1200px;
+    margin: auto;
+    font-size: 14px;
+}
+
+/* ===================================
+   12. RESPONSIV DESIGN
+=================================== */
+
+@media (max-width: 900px) {
+    .booking-layout {
+        grid-template-columns: 1fr;
+    }
+
+    #workshopList {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .header {
+        padding: 20px;
+    }
+
+    .navbar {
+        flex-direction: column;
+    }
+
+    .nav-links {
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .container {
+        padding: 30px 20px;
+    }
+
+    #workshopList {
+        grid-template-columns: 1fr;
+    }
+
+    .booking-box,
+    .price-box {
+        padding: 20px;
+    }
+
+    .form-buttons {
+        flex-wrap: wrap;
+    }
+}
+
+
+/* ===================================
+   RULLGARDINSMENY – ERBJUDANDE
+=================================== */
+
+#workshopSelect {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #D9D4CB;
+    border-radius: 6px;
+    background-color: #FFFFFF;
+    color: #1F2A28;
+    font-size: 14px;
+    font-family: inherit;
+    margin-bottom: 16px;
+}
+
+
+
+/* ===================================
+   DÖLJ TEXTEN FÖR VALD WORKSHOP
+=================================== */
+
+#selectedWorkshop {
+    display: none;
+}
+
+
+
+/* ===================================
+   FÖRKLARANDE TEXT UNDER TOTALPRIS
+=================================== */
+
+.price-info {
+    font-size: 12px;
+    color: #6B7470;
+    margin-top: 4px;
+}
