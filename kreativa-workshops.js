@@ -121,7 +121,9 @@ bookingForm.addEventListener("submit", function(event) {
     atPosition == 0 ||
     atPosition == email.length - 1 ||
     domain.indexOf(".") <= 0 ||
-    domain.indexOf(".") == domain.length - 1
+    domain.indexOf(".") == domain.length - 1 ||
+    domain.includes("..")
+
 ) {
     document.getElementById("emailError").innerHTML =
         "Fyll i en giltig e-postadress.";
@@ -143,6 +145,23 @@ bookingForm.addEventListener("submit", function(event) {
     // ===================================
 
     const quantity = Number(document.getElementById("quantity").value);
+
+
+    // Kontrollera antal personer
+    const quantityInput = document.getElementById("quantity").value;
+
+    if (
+        quantityInput.trim() === "" ||
+        !Number.isInteger(quantity) ||
+        quantity < 1 ||
+        quantity > 5
+    ) {
+        document.getElementById("quantityError").textContent =
+            "Ange ett heltal mellan 1 och 5 personer.";
+    } else {
+        document.getElementById("quantityError").textContent = "";
+    }
+
 
     if (
         name.trim() !== "" &&
@@ -180,6 +199,19 @@ bookingForm.addEventListener("submit", function(event) {
             confirmation.appendChild(paragraph);
         }
 
+        
+        // Lås formuläret efter bekräftad bokning
+        document.getElementById("name").disabled = true;
+        document.getElementById("email").disabled = true;
+        document.getElementById("quantity").disabled = true;
+        document.getElementById("workshopSelect").disabled = true;
+
+        // Inaktivera bekräftelseknappen
+        bookingForm.querySelector('button[type="submit"]').disabled = true;
+
+        // Lås workshopkorten
+        workshopList.style.pointerEvents = "none";
+
 
     } else {
         document.getElementById("bookingConfirmation").textContent = "";
@@ -194,6 +226,19 @@ bookingForm.addEventListener("submit", function(event) {
 const resetButton = document.getElementById("resetButton");
 
 resetButton.addEventListener("click", function() {
+
+    
+    // Lås upp formuläret för en ny bokning
+    document.getElementById("name").disabled = false;
+    document.getElementById("email").disabled = false;
+    document.getElementById("quantity").disabled = false;
+    document.getElementById("workshopSelect").disabled = false;
+
+    // Aktivera bekräftelseknappen igen
+    bookingForm.querySelector('button[type="submit"]').disabled = false;
+
+    // Gör workshopkorten klickbara igen
+    workshopList.style.pointerEvents = "auto";
 
     // Återställ vald workshop
     selectedWorkshop = null;
@@ -227,6 +272,7 @@ resetButton.addEventListener("click", function() {
     document.getElementById("nameError").textContent = "";
     document.getElementById("emailError").textContent = "";
     document.getElementById("workshopError").textContent = "";
+    document.getElementById("quantityError").textContent = "";
 
     // Ta bort bokningsbekräftelsen
     document.getElementById("bookingConfirmation").textContent = "";
